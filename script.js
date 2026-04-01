@@ -27,18 +27,16 @@ function addTodo(todo) {
     para.style.textDecoration = "line-through";
     remove(todo);
 
+    para.addEventListener("dblclick", () => {
+      todoList.removeChild(para); //through closure
+      remove(todo);
+    });
 
-  para.addEventListener("dblclick", () => {
-    todoList.removeChild(para); //through closure
-    remove(todo);
+    function remove(todo) {
+      let index = todos.indexOf(todo);
+      if (index > -1) todos.splice(index, 1);
+    }
+
+    localStorage.setItem("todos", JSON.stringify(todos));
   });
-
-  function remove(todo) {
-    let index = todos.indexOf(todo);
-    if (index > -1) todos.splice(index, 1);
-  }
-
-  localStorage.setItem("todos", JSON.stringify(todos));
-
-  console.log("im a second edited line ")
 }
