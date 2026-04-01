@@ -2,6 +2,8 @@ let button = document.getElementById("add"); // button
 let todoList = document.getElementById("todoList"); //adhu keela varudhu
 let input = document.getElementById("input"); //text
 
+let topic = "to-do list";
+
 let todos = [];
 window.onload = () => {
   console.log("loaded");
