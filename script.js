@@ -39,4 +39,6 @@ function addTodo(todo) {
   }
 
   localStorage.setItem("todos", JSON.stringify(todos));
+
+  console.log("im a second edited line ")
 }
